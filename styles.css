@@ -1220,9 +1220,18 @@ body {
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); opacity: 0.5; }
-    50% { transform: scale(2); opacity: 0; }
-    100% { transform: scale(1); opacity: 0.5; }
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(2);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
 }
 
 /*===================================
@@ -1307,11 +1316,11 @@ body {
 }
 
 @keyframes typing {
-    from { 
+    from {
         width: 0;
         border-right: 2px solid var(--primary-color);
     }
-    to { 
+    to {
         width: 100%;
         border-right: none;
     }
@@ -1437,19 +1446,19 @@ footer {
     .hero h1 {
         font-size: 2rem;
     }
-    
+
     .social-links {
         gap: 1rem;
     }
-    
+
     .project-links {
         flex-direction: column;
     }
-    
+
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .skill-item {
         width: 80px;
     }
@@ -1463,7 +1472,7 @@ footer {
         grid-template-columns: 1fr;
         padding: 1rem;
     }
-    
+
     .about-text > p {
         font-size: 1rem;
         padding: 0 1rem;
@@ -1475,69 +1484,55 @@ footer {
 ====================================*/
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 0.8rem;
     margin-top: 2rem;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 600px;
 }
 
-.skill-item {
-    text-align: center;
-    padding: 1rem;
+.skill-box {
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 0.8rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
 }
 
-.skill-item:hover {
+.skill-box:hover {
     transform: translateY(-5px);
     background: rgba(255, 107, 157, 0.1);
+    border-color: var(--primary-color);
+    box-shadow: 0 5px 15px rgba(255, 107, 157, 0.2);
 }
 
-.skill-item i {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+.skill-box i {
+    font-size: 1.5rem;
     background: linear-gradient(45deg, var(--primary-color), #ff9eb7);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.skill-item h4 {
-    color: #fff;
-    margin: 0.5rem 0;
-    font-size: 1rem;
-}
-
-.skill-progress-bar {
-    width: 100%;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 3px;
-    overflow: hidden;
-    margin-top: 0.5rem;
-}
-
-.skill-progress-bar .progress {
-    height: 100%;
-    background: linear-gradient(90deg, var(--primary-color), #ff9eb7);
-    border-radius: 3px;
-    width: 0;
-    transition: width 1.5s ease;
+.skill-box span {
+    font-size: 0.75rem;
+    color: var(--text-color);
+    opacity: 0.8;
 }
 
 @media (max-width: 768px) {
     .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 100%;
     }
 }
 
 @media (max-width: 480px) {
     .skills-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -1651,9 +1646,18 @@ footer {
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); opacity: 0.5; }
-    50% { transform: scale(2); opacity: 0; }
-    100% { transform: scale(1); opacity: 0.5; }
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(2);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
 }
 
 /*===================================
@@ -1663,7 +1667,7 @@ footer {
     .contact-cards-container {
         grid-template-columns: 1fr;
     }
-    
+
     .contact-card {
         padding: 1.5rem;
     }
@@ -1753,16 +1757,22 @@ footer {
 }
 
 @keyframes fadeOut {
-    0% { opacity: 1; }
-    70% { opacity: 1; }
-    100% { opacity: 0; }
+    0% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 @media (max-width: 768px) {
     .cta-buttons {
         flex-direction: column;
     }
-    
+
     .cta-button {
         width: 100%;
         justify-content: center;
@@ -1780,12 +1790,83 @@ footer {
 }
 
 @keyframes wave {
-    0% { transform: rotate(0deg); }
-    10% { transform: rotate(14deg); }
-    20% { transform: rotate(-8deg); }
-    30% { transform: rotate(14deg); }
-    40% { transform: rotate(-4deg); }
-    50% { transform: rotate(10deg); }
-    60% { transform: rotate(0deg); }
-    100% { transform: rotate(0deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(14deg);
+    }
+    20% {
+        transform: rotate(-8deg);
+    }
+    30% {
+        transform: rotate(14deg);
+    }
+    40% {
+        transform: rotate(-4deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    60% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/*===================================
+    Skills Grid
+====================================*/
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.skill-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skill-box:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 107, 157, 0.1);
+    border-color: var(--primary-color);
+    box-shadow: 0 5px 15px rgba(255, 107, 157, 0.2);
+}
+
+.skill-box i {
+    font-size: 1.8rem;
+    background: linear-gradient(45deg, var(--primary-color), #ff9eb7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.skill-box span {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
